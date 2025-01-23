@@ -1,0 +1,77 @@
+body {
+  font-family: "arial";
+  color: white;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  --sb-track-color: #04042a;
+  --sb-thumb-color: #ffffff;
+  --sb-size: 6px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 50px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+/* SCREEN SIZE */
+.page-type {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Media queries for different screen sizes */
+@media (min-width: 1536px) {
+  .page-type::before {
+    content: "Page Type: 2xl";
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .page-type::before {
+    content: "Page Type: xl";
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .page-type::before {
+    content: "Page Type: lg";
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .page-type::before {
+    content: "Page Type: md";
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .page-type::before {
+    content: "Page Type: sm";
+  }
+}

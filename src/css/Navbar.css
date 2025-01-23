@@ -1,0 +1,17 @@
+.link {
+  color: white;
+  font-size: larger;
+  text-decoration: none;
+  text-transform: none;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Yumuşak geçiş */
+}
+
+.link:hover {
+  text-shadow: 20px -20px 80px rgba(255, 255, 255, 1), 20px 20px 80px rgba(255, 255, 255, 1), -20px -20px 80px rgba(255, 255, 255, 1), -20px 20px 80px rgba(255, 255, 255, 1),
+    0px 0px 80px rgba(255, 255, 255, 1), 20px 0px 80px rgba(255, 255, 255, 1), -20px 0px 80px rgba(255, 255, 255, 1);
+}

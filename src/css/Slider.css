@@ -1,0 +1,26 @@
+.skill-img {
+  height: 200px;
+  object-fit: cover;
+}
+.slider-nav {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.skill-title {
+  font-size: 20px;
+  font-weight: bold;
+}
