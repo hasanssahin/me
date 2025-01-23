@@ -13,12 +13,12 @@ export const HomePage = () => {
     link.click()
   }
   return (
-    <div className='bg-custom-gradient flex justify-between items-center h-full sm:justify-center xl:justify-around'>
-      <div className='flex justify-center items-center w-1/2 sm:hidden xl:flex'>
-        <img className='w-[64%]' src={HomeImage} />
+    <div className='bg-custom-gradient flex justify-between items-center h-full sm:justify-center xl:justify-evenly'>
+      <div className='w-[40%] justify-center items-center xs:hidden xl:flex'>
+        <img className='w-[70%]' src={HomeImage} />
       </div>
 
-      <div className='flex flex-col items-start w-1/2'>
+      <div className='xl:w-[45%] flex flex-col justify-center items-start xs:w-full xl:m-0 lg:mx-40 md:mx-32 sm:mx-24 xs:mx-20'>
         <div className='mb-8'>
           <h1 className='text-5xl'>Hasan Şahin</h1>
           <TypeAnimation sequence={["I am a software engineer", 1000, "", 1000]} wrapper='span' speed={50} className='text-3xl' repeat={Infinity} />

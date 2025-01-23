@@ -2,6 +2,7 @@ body {
   font-family: "arial";
   color: white;
   height: 100vh;
+  background-color: #010426;
 }
 
 #root {
@@ -73,5 +74,11 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 640px) and (max-width: 767px) {
   .page-type::before {
     content: "Page Type: sm";
+  }
+}
+
+@media (max-width: 639px) {
+  .page-type::before {
+    content: "Page Type: xs";
   }
 }

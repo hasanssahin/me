@@ -6,7 +6,6 @@ import TimelineContent from "@mui/lab/TimelineContent"
 import TimelineDot from "@mui/lab/TimelineDot"
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent"
 import { education, experience } from "../../data/about-data"
-import AboutImage from "../../images/bg-about.png"
 import "../../css/Timeline.css"
 export const AboutTimeline = () => {
   const handleRedirect = (url: string) => {
@@ -59,9 +58,6 @@ export const AboutTimeline = () => {
           ))}
         </Timeline>
       </div>
-      {/* <div className='about-image'>
-        <img src={AboutImage} />
-      </div> */}
     </div>
   )
 }
