@@ -43,7 +43,7 @@ export const HomePage = () => {
           </Button>
         </div>
       </div>
-      {/* <FluidCursor /> */}
+      <FluidCursor />
     </div>
   )
 }

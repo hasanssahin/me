@@ -1,33 +1,16 @@
-.timeline {
+.divider {
+  font-size: 30px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  column-gap: 50px;
-  margin-top: 50px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
-.education {
-  width: 50%;
-}
-
-.experience {
-  width: 50%;
-}
-
-.education-color {
-  color: #02ae52;
-}
-
-.experience-color {
-  color: #19c7d5;
-}
-
-/* .about-image {
-  width: 30%;
-} */
-
-.timeline-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.divider::before,
+.divider::after {
+  flex: 1;
+  content: "";
+  padding: 1px;
+  background-color: white;
+  margin: 20px;
 }

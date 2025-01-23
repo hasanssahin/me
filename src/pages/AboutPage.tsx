@@ -1,37 +1,24 @@
 import "../css/AboutPage.css"
-
 import { Slider } from "../components/swiper/Slider"
 import { AboutTimeline } from "../components/about/AboutTimeline"
-import { Divider, LinearProgress } from "@mui/material"
 
 export const AboutPage = () => {
   return (
-    <div className='about bg-custom-gradient'>
-      <div className='about-me'>
-        <div className='about-title'>About Me</div>
-        <div className='about-description'>
-          Hi, I'm Hasan Sahin, a software engineer with a passion for building efficient, scalable, and user-friendly applications. Since graduating from software engineering, I have embarked on a
-          journey of exploring diverse technologies, continuously improving my skills, and solving real-world problems through innovative software solutions. With hands-on experience in back-end
-          development using Spring Boot and front-end development using React, I specialize in building full-stack applications that are both functional and intuitive. My expertise extends to
-          designing and implementing APIs (REST, SOAP, gRPC) and managing databases like PostgreSQL, MongoDB, and Redis. Additionally, I have a solid understanding of messaging tools such as RabbitMQ
-          and Kafka, allowing me to develop robust, asynchronous communication systems that scale efficiently. What drives me most is the dynamic and ever-evolving nature of software engineering. I
-          thrive on learning new technologies, tackling complex challenges, and creating solutions that add real value. Whether it's designing microservices, optimizing system performance, or
-          collaborating on innovative projects, I approach every task with curiosity and dedication. Feel free to reach out—I'd love to connect and exchange ideas about building smarter, more
-          effective software systems!
+    <div className='flex justify-center flex-col items-center bg-custom-gradient'>
+      <div className='flex flex-col justify-center items-center w-[80%] mb-10'>
+        <div className='text-[40px] font-bold mb-5'>About Me</div>
+        <div className='text-sm'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci vero eaque animi hic nulla et consequuntur totam itaque temporibus? Porro facere laboriosam placeat dolorum,
+          reprehenderit asperiores? Suscipit explicabo quo minus hic tenetur possimus necessitatibus rem, quas nesciunt, sequi eos repellat nihil itaque magnam incidunt autem in. Nostrum esse itaque
+          vero delectus non rem, impedit modi? Numquam, quia atque! Assumenda rem odio incidunt officia quae illum mollitia aliquid sed eius tempore, dolores quaerat officiis nemo, temporibus
+          explicabo quasi ipsam! Rem corporis praesentium illo suscipit sequi, accusamus repellat. Esse commodi ea, perferendis aliquid provident placeat suscipit optio alias autem iste ad!
         </div>
       </div>
-
-      <div className='skills'>
+      <div className='xs:w-[90%] lg:w-[70%]'>
         <div className='divider'>My Skills</div>
-        <div className='slider'>
-          <Slider />
-        </div>
+        <Slider />
       </div>
-      <div className='linear'>
-        <hr />
-      </div>
-
-      <div className='timelines'>
+      <div className='mt-10'>
         <AboutTimeline />
       </div>
     </div>

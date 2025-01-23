@@ -4,17 +4,22 @@ import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 import { useState } from "react"
 import "../css/Navbar.css"
 export const Navbar = () => {
+  const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
   }
-  const handleClose = () => {
+  const handleClose = (path?: string) => {
     setAnchorEl(null)
+    if (path) {
+      navigate(path)
+    }
   }
   return (
     <AppBar position='sticky' sx={{ backgroundColor: "rgba(2, 4, 41, 0.5)" }} className='h-20 flex justify-center' elevation={0}>
@@ -38,7 +43,7 @@ export const Navbar = () => {
             id='basic-menu'
             anchorEl={anchorEl}
             open={open}
-            onClose={handleClose}
+            onClose={() => handleClose()}
             MenuListProps={{
               "aria-labelledby": "basic-button",
             }}
@@ -56,15 +61,9 @@ export const Navbar = () => {
                 color: "#020429",
               },
             }}>
-            <MenuItem onClick={handleClose}>
-              <Link to={"/"}>Home</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to={"/about"}>About</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to={"/contact"}>Contact</Link>
-            </MenuItem>
+            <MenuItem onClick={() => handleClose("/")}>Home</MenuItem>
+            <MenuItem onClick={() => handleClose("/about")}>About</MenuItem>
+            <MenuItem onClick={() => handleClose("/contact")}>Contact</MenuItem>
           </Menu>
         </span>
         <div className='2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20'>

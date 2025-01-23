@@ -12,21 +12,21 @@ export const AboutTimeline = () => {
     window.open(url, "_blank", "noopener,noreferrer")
   }
   return (
-    <div className='timeline'>
-      <div className='education'>
-        <div className='timeline-title'>Education</div>
+    <div className='flex justify-evenly items-start gap-x-12 xl:flex-row xs:flex-col xs:gap-y-20 xl:gap-y-0'>
+      <div className='xl:w-1/2 xs:w-full'>
+        <div className='divider'>Education</div>
         <Timeline position='alternate'>
           {education.map((item, index) => (
             <TimelineItem key={index}>
               <TimelineOppositeContent color='grey'>{item.date}</TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot sx={{ backgroundColor: "#02ae52" }} />
+                <TimelineDot />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <div className='education-content' onClick={() => handleRedirect(item.url)} style={{ cursor: "pointer" }}>
+                <div onClick={() => handleRedirect(item.url)} style={{ cursor: "pointer" }}>
                   <p>{item.location}</p>
-                  <p className='education-color'>{item.school}</p>
+                  <p>{item.school}</p>
                   <p>{item.department}</p>
                   <p>{item.title}</p>
                 </div>
@@ -36,20 +36,20 @@ export const AboutTimeline = () => {
         </Timeline>
       </div>
 
-      <div className='experience'>
-        <div className='timeline-title'>Experience</div>
+      <div className='xl:w-1/2 xs:w-full'>
+        <div className='divider'>Experience</div>
         <Timeline position='alternate'>
           {experience.map((item, index) => (
             <TimelineItem key={index}>
               <TimelineOppositeContent color='grey'>{item.date}</TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot sx={{ backgroundColor: "#19c7d5" }} />
+                <TimelineDot />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <div className='experience-content' onClick={() => handleRedirect(item.url)} style={{ cursor: "pointer" }}>
+                <div onClick={() => handleRedirect(item.url)} style={{ cursor: "pointer" }}>
                   <p>{item.location}</p>
-                  <p className='experience-color'>{item.company}</p>
+                  <p>{item.company}</p>
                   <p>{item.title}</p>
                   <p>{item.position}</p>
                 </div>
