@@ -3,7 +3,7 @@ import { Button } from "@mui/material"
 import FluidCursor from "../components/cursor/FluidCursor"
 import cv from "../pdf/Hasan Sahin CV.pdf"
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload"
-import HomeImage from "../images/bg-home.png"
+import Me from "../images/me.png"
 export const HomePage = () => {
   const handleDownload = () => {
     const cvUrl = cv
@@ -13,17 +13,18 @@ export const HomePage = () => {
     link.click()
   }
   return (
-    <div className='bg-custom-gradient flex justify-between items-center h-full sm:justify-center xl:justify-evenly'>
-      <div className='w-[40%] justify-center items-center xs:hidden xl:flex'>
-        <img className='w-[70%]' src={HomeImage} />
+    <div className='bg-custom-gradient h-full flex xl:flex-row xs:flex-col items-center   xl:justify-evenly xs:gap-y-16 xs:pb-16 xl:pb-0'>
+      {/* <FluidCursor /> */}
+      <div className='xs:w-[50%] md:w-[40%] lg:w-[35%] xl:w-[35%] flex justify-center items-center'>
+        <img className='rounded-[50%] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.4)] transition-shadow duration-500 ease-in-out' src={Me} />
       </div>
 
-      <div className='xl:w-[45%] flex flex-col justify-center items-start xs:w-full xl:m-0 lg:mx-40 md:mx-32 sm:mx-24 xs:mx-20'>
-        <div className='mb-8'>
+      <div className='xl:w-[45%] xs:w-[70%] flex flex-col justify-center items-start'>
+        <div className='mb-8 xs:w-full xs:flex xs:flex-col xs:items-center xl:items-start'>
           <h1 className='text-5xl'>Hasan Şahin</h1>
           <TypeAnimation sequence={["I am a software engineer", 1000, "", 1000]} wrapper='span' speed={50} className='text-3xl' repeat={Infinity} />
         </div>
-        <div className='flex flex-col gap-y-5'>
+        <div className='flex flex-col gap-y-5 xs:text-center xl:text-left'>
           <p>
             As a software engineering graduate with 1 year of professional experience, I have experience in developing web applications using Spring Boot and React. I am also familiar with API
             development (REST, SOAP, gRPC), database management (PostgreSQL, MongoDB, Redis) and messaging tools (RabbitMQ, Kafka).
@@ -37,13 +38,14 @@ export const HomePage = () => {
             technologies.
           </p>
         </div>
-        <div className='w-full flex justify-end mt-5'>
+        <div className='w-full flex xl:justify-end xs:justify-center mt-5'>
           <Button startIcon={<CloudDownloadIcon />} size='small' variant='outlined' sx={{ textTransform: "none", color: "white", borderColor: "white" }} onClick={handleDownload}>
             Download CV
           </Button>
         </div>
       </div>
-      <FluidCursor />
     </div>
   )
 }
+
+//

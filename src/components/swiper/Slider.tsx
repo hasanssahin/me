@@ -4,8 +4,6 @@ import { ArrowLeft, ArrowRight } from "phosphor-react"
 import "swiper/css"
 import "swiper/css/effect-coverflow"
 
-import "../../css/Slider.css"
-
 import HTML from "../../images/html.png"
 import CSS from "../../images/css.png"
 import Javascript from "../../images/javascript.png"
@@ -42,8 +40,8 @@ export const Slider = () => {
       {skills.map((skill, index) => (
         <SwiperSlide key={index}>
           <div className='flex flex-col justify-center items-center gap-y-5'>
-            <div className='text-lg font-bold'>{skill.name}</div>
-            <img className='h-[200px] object-cover' src={skill.url} />
+            <div className='lg:text-lg xs:text-sm font-bold'>{skill.name}</div>
+            <img className='md:h-[200px] xs:h-[150px] object-contain' src={skill.url} />
           </div>
         </SwiperSlide>
       ))}

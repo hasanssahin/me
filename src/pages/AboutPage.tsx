@@ -1,24 +1,45 @@
-import "../css/AboutPage.css"
 import { Slider } from "../components/swiper/Slider"
 import { AboutTimeline } from "../components/about/AboutTimeline"
-
+import CanvasCursor from "../components/cursor/CanvasCursor"
+import { Divider } from "../components/divider/Divider"
+import AboutMe from "../images/about-me.png"
 export const AboutPage = () => {
   return (
+    // sayfa geneli
     <div className='flex justify-center flex-col items-center bg-custom-gradient'>
-      <div className='flex flex-col justify-center items-center w-[80%] mb-10'>
+      {/*başlık, (resim, yazı)  */}
+      <div className='flex flex-col justify-center items-center xs:w-[90%] xl:w-[85%] mb-20'>
+        {/* başlık */}
         <div className='text-[40px] font-bold mb-5'>About Me</div>
-        <div className='text-sm'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci vero eaque animi hic nulla et consequuntur totam itaque temporibus? Porro facere laboriosam placeat dolorum,
-          reprehenderit asperiores? Suscipit explicabo quo minus hic tenetur possimus necessitatibus rem, quas nesciunt, sequi eos repellat nihil itaque magnam incidunt autem in. Nostrum esse itaque
-          vero delectus non rem, impedit modi? Numquam, quia atque! Assumenda rem odio incidunt officia quae illum mollitia aliquid sed eius tempore, dolores quaerat officiis nemo, temporibus
-          explicabo quasi ipsam! Rem corporis praesentium illo suscipit sequi, accusamus repellat. Esse commodi ea, perferendis aliquid provident placeat suscipit optio alias autem iste ad!
+        {/* resim ve yazı */}
+        <div className='flex justify-evenly items-center xs:flex-col xl:flex-row xs:gap-y-10 xl:gap-y-0'>
+          <div className='2xl:w-[25%] xl:w-[30%] lg:w-[30%] md:w-[35%] xs:w-[50%]'>
+            <img className='rounded-[40px]' src={AboutMe} />
+          </div>
+          <div className='2xl:w-[55%] xl:w-[60%] xs:w-[90%] flex flex-col justify-center items-start gap-y-5 xs:text-center xl:text-left'>
+            <p>
+              My name is Hasan Şahin, and I am 24 years old. My software journey began at the age of 15 when I studied Database Programming in a technical high school. This early start gave me a
+              strong foundation in understanding how systems store and manage data, sparking my passion for software development.
+            </p>
+            <p>
+              During my undergraduate years in software engineering, I explored various areas of software development, which helped me discover my enthusiasm for building efficient and user-friendly
+              applications. Over the past year, I have been professionally developing web applications using Spring Boot and React, focusing on both frontend and backend development.
+            </p>
+            <p>
+              My approach to problem-solving is rooted in an engineering mindset, focusing on innovation, growth, and effective solutions. I am deeply committed to continuous learning and
+              self-development, frequently working on personal projects to deepen my expertise.
+            </p>
+            <p>If you'd like to connect, collaborate, or exchange ideas about software development and modern technologies, feel free to reach out!</p>
+          </div>
         </div>
       </div>
+      {/* skill */}
       <div className='xs:w-[90%] lg:w-[70%]'>
-        <div className='divider'>My Skills</div>
+        <Divider text='My Skills' />
         <Slider />
       </div>
-      <div className='mt-10'>
+      {/* timeline */}
+      <div className='mt-20'>
         <AboutTimeline />
       </div>
     </div>

@@ -22,7 +22,16 @@ export const Navbar = () => {
     }
   }
   return (
-    <AppBar position='sticky' sx={{ backgroundColor: "rgba(2, 4, 41, 0.5)" }} className='h-20 flex justify-center' elevation={0}>
+    <AppBar
+      position='sticky'
+      sx={{
+        backgroundColor: {
+          xs: "rgba(2, 4, 41, 0)", // xs ekranlarda tam opak
+          md: "rgba(2, 4, 41, 0.5)", // diğer boyutlarda yarı opak
+        },
+      }}
+      className='h-20 flex justify-center'
+      elevation={0}>
       <Toolbar>
         <span className='2xl:hidden xl:hidden lg:hidden md:hidden sm:block'>
           <IconButton

@@ -6,27 +6,27 @@ import TimelineContent from "@mui/lab/TimelineContent"
 import TimelineDot from "@mui/lab/TimelineDot"
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent"
 import { education, experience } from "../../data/about-data"
-import "../../css/Timeline.css"
+import { Divider } from "../divider/Divider"
 export const AboutTimeline = () => {
   const handleRedirect = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer")
   }
   return (
-    <div className='flex justify-evenly items-start gap-x-12 xl:flex-row xs:flex-col xs:gap-y-20 xl:gap-y-0'>
+    <div className='flex justify-evenly items-start gap-x-12 xl:flex-row xs:flex-col xs:gap-y-20 xl:gap-y-0 mb-28'>
       <div className='xl:w-1/2 xs:w-full'>
-        <div className='divider'>Education</div>
+        <Divider text='Education' className='text-orange-400' />
         <Timeline position='alternate'>
           {education.map((item, index) => (
             <TimelineItem key={index}>
               <TimelineOppositeContent color='grey'>{item.date}</TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot />
+                <TimelineDot sx={{ backgroundColor: "#FB923C" }} />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
                 <div onClick={() => handleRedirect(item.url)} style={{ cursor: "pointer" }}>
                   <p>{item.location}</p>
-                  <p>{item.school}</p>
+                  <p className='text-orange-400'>{item.school}</p>
                   <p>{item.department}</p>
                   <p>{item.title}</p>
                 </div>
@@ -37,19 +37,19 @@ export const AboutTimeline = () => {
       </div>
 
       <div className='xl:w-1/2 xs:w-full'>
-        <div className='divider'>Experience</div>
+        <Divider text='Experience' className='text-green-400' />
         <Timeline position='alternate'>
           {experience.map((item, index) => (
             <TimelineItem key={index}>
               <TimelineOppositeContent color='grey'>{item.date}</TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot />
+                <TimelineDot sx={{ backgroundColor: "#4ADE80" }} />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
                 <div onClick={() => handleRedirect(item.url)} style={{ cursor: "pointer" }}>
                   <p>{item.location}</p>
-                  <p>{item.company}</p>
+                  <p className='text-green-400'>{item.company}</p>
                   <p>{item.title}</p>
                   <p>{item.position}</p>
                 </div>
