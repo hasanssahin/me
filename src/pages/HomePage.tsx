@@ -15,7 +15,7 @@ export const HomePage = () => {
   return (
     <div className='bg-custom-gradient h-full flex xl:flex-row xs:flex-col items-center   xl:justify-evenly xs:gap-y-16 xs:pb-16 xl:pb-0'>
       {/* <FluidCursor /> */}
-      <div className='xs:w-[50%] md:w-[40%] lg:w-[35%] xl:w-[35%] flex justify-center items-center'>
+      <div className='xs:w-[50%] md:w-[40%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] flex justify-center items-center'>
         <img className='rounded-[50%] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.4)] transition-shadow duration-500 ease-in-out' src={Me} />
       </div>
 
