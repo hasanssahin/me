@@ -24,13 +24,11 @@ export const Navbar = () => {
   return (
     <AppBar
       position='sticky'
+      className='h-[70px] flex justify-center'
       sx={{
-        backgroundColor: {
-          xs: "rgba(2, 4, 41, 0)", // xs ekranlarda tam opak
-          md: "rgba(2, 4, 41, 0.5)", // diğer boyutlarda yarı opak
-        },
+        backgroundColor: "transparent",
+        backdropFilter: "blur(5px)", // Blur efekti
       }}
-      className='h-20 flex justify-center'
       elevation={0}>
       <Toolbar>
         <span className='2xl:hidden xl:hidden lg:hidden md:hidden sm:block'>
@@ -75,7 +73,7 @@ export const Navbar = () => {
             <MenuItem onClick={() => handleClose("/contact")}>Contact</MenuItem>
           </Menu>
         </span>
-        <div className='2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20'>
+        <div className='2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20 pr-20'>
           <Link to={"/"} className='link'>
             Home
           </Link>

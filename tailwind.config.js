@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "custom-gradient": "linear-gradient(to top, #01020a, #020429)",
+        "custom-gradient": "linear-gradient(to top, #000000, #02052A)",
       },
       screens: {
         xs: "0px",

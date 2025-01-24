@@ -2,7 +2,7 @@ body {
   font-family: "arial";
   color: white;
   height: 100vh;
-  background-color: #010426;
+  background: linear-gradient(to top, #000000, #020429);
 }
 
 #root {
@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  --sb-track-color: #04042a;
+  --sb-track-color: #020429;
   --sb-thumb-color: #ffffff;
   --sb-size: 6px;
 }

@@ -1,6 +1,6 @@
 import { Slider } from "../components/swiper/Slider"
 import { AboutTimeline } from "../components/about/AboutTimeline"
-import CanvasCursor from "../components/cursor/CanvasCursor"
+// import CanvasCursor from "../components/cursor/CanvasCursor"
 import { Divider } from "../components/divider/Divider"
 import AboutMe from "../images/about-me.png"
 export const AboutPage = () => {
@@ -35,7 +35,7 @@ export const AboutPage = () => {
       </div>
       {/* skill */}
       <div className='xs:w-[90%] lg:w-[70%]'>
-        <Divider text='My Skills' />
+        <Divider text='My Skills' className='text-[#d3e8db]' />
         <Slider />
       </div>
       {/* timeline */}
