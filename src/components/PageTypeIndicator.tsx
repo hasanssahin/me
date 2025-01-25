@@ -1,4 +1,4 @@
-import "../App.css" // CSS dosyanızı buraya import edin
+import "../App.css"
 
 const PageTypeIndicator = () => {
   return <div className='page-type'></div>

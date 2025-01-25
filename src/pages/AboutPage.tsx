@@ -1,17 +1,12 @@
 import { Slider } from "../components/swiper/Slider"
 import { AboutTimeline } from "../components/about/AboutTimeline"
-// import CanvasCursor from "../components/cursor/CanvasCursor"
 import { Divider } from "../components/divider/Divider"
 import AboutMe from "../images/about-me.png"
 export const AboutPage = () => {
   return (
-    // sayfa geneli
     <div className='bg-custom-bg bg-cover h-full flex justify-center flex-col items-center'>
-      {/*başlık, (resim, yazı)  */}
       <div className='flex flex-col justify-center items-center xs:w-[90%] xl:w-[85%] mb-20'>
-        {/* başlık */}
         <div className='text-[40px] font-bold mb-5'>About Me</div>
-        {/* resim ve yazı */}
         <div className='flex justify-evenly items-center xs:flex-col xl:flex-row xs:gap-y-10 xl:gap-y-0'>
           <div className='2xl:w-[25%] xl:w-[30%] lg:w-[30%] md:w-[35%] xs:w-[50%]'>
             <img className='rounded-[40px]' src={AboutMe} />
@@ -33,12 +28,10 @@ export const AboutPage = () => {
           </div>
         </div>
       </div>
-      {/* skill */}
       <div className='xs:w-[90%] lg:w-[70%]'>
         <Divider text='My Skills' className='text-[#d3e8db]' />
         <Slider />
       </div>
-      {/* timeline */}
       <div className='mt-20'>
         <AboutTimeline />
       </div>

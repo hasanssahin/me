@@ -1,6 +1,5 @@
 import { TypeAnimation } from "react-type-animation"
 import { Button } from "@mui/material"
-import FluidCursor from "../components/cursor/FluidCursor"
 import cv from "../pdf/Hasan Sahin CV.pdf"
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload"
 import Me from "../images/me.png"

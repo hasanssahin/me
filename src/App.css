@@ -34,7 +34,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-/* SCREEN SIZE */
 .page-type {
   position: fixed;
   bottom: 10px;
@@ -45,7 +44,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-/* Media queries for different screen sizes */
 @media (min-width: 1536px) {
   .page-type::before {
     content: "Page Type: 2xl";
