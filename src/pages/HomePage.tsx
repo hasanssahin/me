@@ -20,7 +20,7 @@ export const HomePage = () => {
       <div className='xl:w-[45%] xs:w-[70%] flex flex-col justify-center items-start'>
         <div className='mb-8 xs:w-full xs:flex xs:flex-col xs:items-center xl:items-start'>
           <h1 className='text-5xl'>Hasan Şahin</h1>
-          <TypeAnimation sequence={["I am a software engineer", 1000, "", 1000]} wrapper='span' speed={50} className='sm:text-3xl xs:text-2xl' repeat={Infinity} />
+          <TypeAnimation sequence={["I am a software engineer", 1000, "", 1000]} wrapper='span' speed={50} className='md:text-3xl xs:text-xl' repeat={Infinity} />
         </div>
         <div className='flex flex-col gap-y-5 xs:text-center xl:text-left'>
           <p>
