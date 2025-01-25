@@ -35,9 +35,9 @@ export const Navbar = () => {
   return (
     <AppBar
       position='sticky'
-      className='h-[70px]'
+      className='h-[70px] flex justify-center'
       sx={{
-        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.3)" : "transparent",
+        background: isScrolled ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.1)",
         backdropFilter: isScrolled ? "blur(5px)" : "none",
         transition: "background-color 0.3s, backdrop-filter 0.3s",
       }}
@@ -85,7 +85,7 @@ export const Navbar = () => {
             <MenuItem onClick={() => handleClose("/contact")}>Contact</MenuItem>
           </Menu>
         </span>
-        <div className='2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20 pr-20'>
+        <div className='h-full 2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20 pr-20'>
           <Link to={"/"} className='link'>
             Home
           </Link>
