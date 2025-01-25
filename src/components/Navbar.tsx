@@ -80,13 +80,13 @@ export const Navbar = () => {
                 color: "#020429",
               },
             }}>
-            <MenuItem onClick={() => handleClose("/")}>Home</MenuItem>
+            <MenuItem onClick={() => handleClose("/me")}>Home</MenuItem>
             <MenuItem onClick={() => handleClose("/about")}>About</MenuItem>
             <MenuItem onClick={() => handleClose("/contact")}>Contact</MenuItem>
           </Menu>
         </span>
         <div className='h-full 2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20 pr-20'>
-          <Link to={"/"} className='link'>
+          <Link to={"/me"} className='link'>
             Home
           </Link>
           <Link to={"/about"} className='link'>
