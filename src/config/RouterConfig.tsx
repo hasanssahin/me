@@ -6,7 +6,7 @@ import { ContactPage } from "../pages/ContactPage"
 export const RouterConfig = () => {
   return (
     <Routes>
-      <Route path='/me' element={<HomePage />} />
+      <Route path='/' element={<HomePage />} />
       <Route path='/about' element={<AboutPage />} />
       <Route path='/contact' element={<ContactPage />} />
     </Routes>
