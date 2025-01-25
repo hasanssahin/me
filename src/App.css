@@ -2,7 +2,6 @@ body {
   font-family: "arial";
   color: white;
   height: 100vh;
-  background: linear-gradient(to top, #000000, #020429);
 }
 
 #root {

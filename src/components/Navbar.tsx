@@ -5,12 +5,13 @@ import MenuIcon from "@mui/icons-material/Menu"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import { Link, useNavigate } from "react-router"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../css/Navbar.css"
 export const Navbar = () => {
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -21,13 +22,24 @@ export const Navbar = () => {
       navigate(path)
     }
   }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
   return (
     <AppBar
       position='sticky'
-      className='h-[70px] flex justify-center'
+      className='h-[70px]'
       sx={{
-        backgroundColor: "transparent",
-        backdropFilter: "blur(5px)", // Blur efekti
+        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.3)" : "transparent",
+        backdropFilter: isScrolled ? "blur(5px)" : "none",
+        transition: "background-color 0.3s, backdrop-filter 0.3s",
       }}
       elevation={0}>
       <Toolbar>

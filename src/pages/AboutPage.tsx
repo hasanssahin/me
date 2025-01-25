@@ -6,7 +6,7 @@ import AboutMe from "../images/about-me.png"
 export const AboutPage = () => {
   return (
     // sayfa geneli
-    <div className='flex justify-center flex-col items-center bg-custom-gradient'>
+    <div className='flex justify-center flex-col items-center bg-custom-bg bg-cover'>
       {/*başlık, (resim, yazı)  */}
       <div className='flex flex-col justify-center items-center xs:w-[90%] xl:w-[85%] mb-20'>
         {/* başlık */}
