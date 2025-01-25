@@ -5,12 +5,45 @@ import TimelineConnector from "@mui/lab/TimelineConnector"
 import TimelineContent from "@mui/lab/TimelineContent"
 import TimelineDot from "@mui/lab/TimelineDot"
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent"
-import { education, experience } from "../../data/about-data"
 import { Divider } from "../divider/Divider"
+import supabase from "../../services/supabase"
+import { useEffect, useState } from "react"
+import { EducationType, ExperienceType } from "../../types/types"
+import { toast } from "react-toastify"
+
 export const AboutTimeline = () => {
   const handleRedirect = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer")
   }
+  const [experience, setExperience] = useState<ExperienceType[]>([])
+  const [education, setEducation] = useState<EducationType[]>([])
+  useEffect(() => {
+    getExperience()
+    getEducation()
+  }, [])
+
+  async function getExperience() {
+    try {
+      const { data } = await supabase.from("experiences").select("*")
+      if (data) {
+        setExperience(data)
+      }
+    } catch (error) {
+      toast.error("Failed to fetch experience data")
+    }
+  }
+
+  async function getEducation() {
+    try {
+      const { data } = await supabase.from("educations").select("*")
+      if (data) {
+        setEducation(data)
+      }
+    } catch (error) {
+      toast.error("Failed to fetch education data")
+    }
+  }
+
   return (
     <div className='flex justify-evenly items-start gap-x-12 xl:flex-row xs:flex-col xs:gap-y-20 xl:gap-y-0 mb-28'>
       <div className='xl:w-1/2 xs:w-full'>

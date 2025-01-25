@@ -3,30 +3,26 @@ import { EffectCoverflow, Navigation } from "swiper/modules"
 import { ArrowLeft, ArrowRight } from "phosphor-react"
 import "swiper/css"
 import "swiper/css/effect-coverflow"
-
-import HTML from "../../images/html.png"
-import CSS from "../../images/css.png"
-import Javascript from "../../images/javascript.png"
-import Java from "../../images/java.png"
-import Reactjs from "../../images/react.png"
-import SpringBoot from "../../images/spring-boot.png"
-import MongoDB from "../../images/mongodb.png"
-import PostgreSQL from "../../images/postgresql.png"
-import Redis from "../../images/redis.png"
-
-const skills = [
-  { name: "Java", url: Java },
-  { name: "Spring Boot", url: SpringBoot },
-  { name: "Javascript", url: Javascript },
-  { name: "React", url: Reactjs },
-  { name: "HTML", url: HTML },
-  { name: "CSS", url: CSS },
-  { name: "PostgreSQL", url: PostgreSQL },
-  { name: "MongoDB", url: MongoDB },
-  { name: "Redis", url: Redis },
-]
-
+import { useEffect, useState } from "react"
+import { SkillType } from "../../types/types"
+import { toast } from "react-toastify"
+import supabase from "../../services/supabase"
 export const Slider = () => {
+  const [skills, setSkills] = useState<SkillType[]>([])
+
+  useEffect(() => {
+    getSkills()
+  }, [])
+
+  async function getSkills() {
+    try {
+      const { data } = await supabase.from("skills").select("*")
+      if (data) setSkills(data)
+    } catch (error) {
+      toast.error("An error occurred while fetching skills")
+    }
+  }
+
   return (
     <Swiper
       effect='coverflow'

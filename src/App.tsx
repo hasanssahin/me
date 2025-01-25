@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify"
 import "./App.css"
 import FluidCursor from "./components/cursor/FluidCursor"
 import { Navbar } from "./components/Navbar"
@@ -10,6 +11,7 @@ function App() {
       <div className='flex-grow'>
         <RouterConfig />
       </div>
+      <ToastContainer />
     </div>
   )
 }
