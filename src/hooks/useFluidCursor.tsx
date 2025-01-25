@@ -1058,7 +1058,7 @@ const useFluidCursor = () => {
   }
 
   function generateColor() {
-    let c = HSVtoRGB(0.6, 0.6, 0.6)
+    let c = HSVtoRGB(0.6, 0.7, 0.7)
     c.r *= 0.15
     c.g *= 0.15
     c.b *= 0.15

@@ -69,15 +69,27 @@ export const Navbar = () => {
             sx={{
               "& .MuiPaper-root": {
                 borderRadius: "10px",
-                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-                backgroundColor: "#010427",
-                padding: "10px",
+                backgroundColor: "#0F3470",
                 color: "white",
                 border: "1px solid white",
+                padding: "10px 20px",
               },
-              "& .MuiMenuItem-root:hover": {
-                backgroundColor: "#e0e0e0",
-                color: "#020429",
+              "& .MuiMenuItem-root": {
+                position: "relative",
+                backgroundColor: "transparent",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  bottom: 0,
+                  width: "0%",
+                  height: "2px",
+                  backgroundColor: "white",
+                  transition: "width 0.5s ease", // Geçiş süresi
+                },
+              },
+              "& .MuiMenuItem-root:hover::after": {
+                width: "100%", // Genişlik hover'da animasyonlu şekilde artar
               },
             }}>
             <MenuItem onClick={() => handleClose("/")}>Home</MenuItem>
@@ -85,7 +97,7 @@ export const Navbar = () => {
             <MenuItem onClick={() => handleClose("/contact")}>Contact</MenuItem>
           </Menu>
         </span>
-        <div className='h-full 2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full justify-end items-center gap-x-20 pr-20'>
+        <div className='h-full 2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full md:justify-center md:pr-0 lg:justify-end items-center gap-x-20 lg:pr-20'>
           <Link to={"/"} className='link'>
             Home
           </Link>

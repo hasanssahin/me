@@ -4,7 +4,7 @@ import { Divider } from "../components/divider/Divider"
 import AboutMe from "../images/about-me.png"
 export const AboutPage = () => {
   return (
-    <div className='bg-custom-bg bg-cover h-full flex justify-center flex-col items-center'>
+    <div className='bg-custom-bg bg-cover h-full flex justify-center flex-col items-center pt-16'>
       <div className='flex flex-col justify-center items-center xs:w-[90%] xl:w-[85%] mb-20'>
         <div className='text-[40px] font-bold mb-5'>About Me</div>
         <div className='flex justify-evenly items-center xs:flex-col xl:flex-row xs:gap-y-10 xl:gap-y-0'>
