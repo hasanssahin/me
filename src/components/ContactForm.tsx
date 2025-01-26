@@ -6,7 +6,7 @@ import { InputAdornment } from "@mui/material"
 import TagFacesIcon from "@mui/icons-material/TagFaces"
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail"
 import { toast } from "react-toastify"
-
+emailjs.init(import.meta.env.VITE_EMAIL_PUBLIC_KEY)
 export const ContactForm = () => {
   const submit = async (values: any) => {
     try {
