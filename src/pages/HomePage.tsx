@@ -2,7 +2,8 @@ import { TypeAnimation } from "react-type-animation"
 import { Button } from "@mui/material"
 import cv from "../pdf/Hasan Sahin CV.pdf"
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload"
-import Me from "../images/me.png"
+import Lottie from "lottie-react"
+import homeAnimation from "../animations/home.json"
 export const HomePage = () => {
   const handleDownload = () => {
     const cvUrl = cv
@@ -12,11 +13,7 @@ export const HomePage = () => {
     link.click()
   }
   return (
-    <div className='bg-custom-bg bg-cover h-full flex xl:flex-row xs:flex-col items-center xl:justify-evenly xs:gap-y-16 xs:pb-16 xl:pb-0 xs:pt-16 xl:pt-0'>
-      <div className='xs:w-[50%] md:w-[40%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] flex justify-center items-center'>
-        <img className='rounded-[50%] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.4)] transition-shadow duration-500 ease-in-out z-[999]' src={Me} />
-      </div>
-
+    <div className='bg-custom-bg bg-cover h-full flex xl:flex-row xs:flex-col-reverse items-center xl:justify-evenly xs:gap-y-16 xs:pb-16 xl:pb-0 xs:pt-16 xl:pt-0'>
       <div className='xl:w-[45%] xs:w-[70%] flex flex-col justify-center items-start'>
         <div className='mb-8 xs:w-full xs:flex xs:flex-col xs:items-center xl:items-start'>
           <h1 className='md:text-5xl xs:text-3xl'>Hasan Şahin</h1>
@@ -42,8 +39,10 @@ export const HomePage = () => {
           </Button>
         </div>
       </div>
+      <div className='xs:w-[50%] md:w-[40%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] flex justify-center items-center'>
+        <Lottie animationData={homeAnimation} loop={true} />
+        {/* <img className='rounded-[50%] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.4)] transition-shadow duration-500 ease-in-out z-[999]' src={Me} /> */}
+      </div>
     </div>
   )
 }
-
-//

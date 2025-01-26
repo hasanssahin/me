@@ -7,6 +7,8 @@ import MenuItem from "@mui/material/MenuItem"
 import { Link, useNavigate } from "react-router"
 import { useEffect, useState } from "react"
 import "../css/Navbar.css"
+import Lottie from "lottie-react"
+import navbarAnimation from "../animations/navbar.json"
 export const Navbar = () => {
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -35,7 +37,7 @@ export const Navbar = () => {
   return (
     <AppBar
       position='sticky'
-      className='h-[70px] flex justify-center'
+      className='h-[70px]'
       sx={{
         background: isScrolled ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.1)",
         backdropFilter: isScrolled ? "blur(5px)" : "none",
@@ -97,16 +99,21 @@ export const Navbar = () => {
             <MenuItem onClick={() => handleClose("/contact")}>Contact</MenuItem>
           </Menu>
         </span>
-        <div className='h-full 2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden w-full md:justify-center md:pr-0 lg:justify-end items-center gap-x-20 lg:pr-20'>
-          <Link to={"/"} className='link'>
-            Home
-          </Link>
-          <Link to={"/about"} className='link'>
-            About
-          </Link>
-          <Link to={"/contact"} className='link'>
-            Contact
-          </Link>
+        <div className='2xl:flex xl:flex lg:flex md:flex sm:hidden xs:hidden h-full w-full lg:justify-between items-center md:justify-center md:pr-0'>
+          <div className='xs:hidden lg:flex h-full xs:pl-0 lg:pl-12'>
+            <Lottie animationData={navbarAnimation} loop={true} />
+          </div>
+          <div className='flex  items-center gap-x-20 lg:pr-20 h-full'>
+            <Link to={"/"} className='link'>
+              Home
+            </Link>
+            <Link to={"/about"} className='link'>
+              About
+            </Link>
+            <Link to={"/contact"} className='link'>
+              Contact
+            </Link>
+          </div>
         </div>
       </Toolbar>
     </AppBar>

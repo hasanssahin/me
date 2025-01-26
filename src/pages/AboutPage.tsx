@@ -1,7 +1,7 @@
 import { Slider } from "../components/swiper/Slider"
 import { AboutTimeline } from "../components/about/AboutTimeline"
 import { Divider } from "../components/divider/Divider"
-import AboutMe from "../images/about-me.png"
+import Me from "../images/me.png"
 export const AboutPage = () => {
   return (
     <div className='bg-custom-bg bg-cover h-full flex justify-center flex-col items-center pt-16'>
@@ -9,7 +9,7 @@ export const AboutPage = () => {
         <div className='text-[40px] font-bold mb-5'>About Me</div>
         <div className='flex justify-evenly items-center xs:flex-col xl:flex-row xs:gap-y-10 xl:gap-y-0'>
           <div className='2xl:w-[25%] xl:w-[30%] lg:w-[30%] md:w-[35%] xs:w-[50%]'>
-            <img className='rounded-[40px]' src={AboutMe} />
+            <img className='rounded-[500px]' src={Me} />
           </div>
           <div className='2xl:w-[55%] xl:w-[60%] xs:w-[90%] flex flex-col justify-center items-start gap-y-5 xs:text-center xl:text-left'>
             <p>
