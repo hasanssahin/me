@@ -45,7 +45,7 @@ export const Navbar = () => {
       }}
       elevation={0}>
       <Toolbar>
-        <span className='2xl:hidden xl:hidden lg:hidden md:hidden sm:block'>
+        <span className='2xl:hidden xl:hidden lg:hidden md:hidden xs:flex w-full justify-start items-center'>
           <IconButton
             size='large'
             edge='start'
@@ -70,15 +70,35 @@ export const Navbar = () => {
             }}
             sx={{
               "& .MuiPaper-root": {
-                borderRadius: "10px",
-                backgroundColor: "#0F3470",
+                borderRadius: "15px",
+                backgroundColor: "rgba(4, 40, 106, 0.95)",
+                backdropFilter: "blur(8px)",
                 color: "white",
-                border: "1px solid white",
-                padding: "10px 20px",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                padding: "0px 25px",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  background: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "10px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  background: "rgba(255, 255, 255, 0.3)",
+                  borderRadius: "10px",
+                  "&:hover": {
+                    background: "rgba(255, 255, 255, 0.5)",
+                  },
+                },
               },
               "& .MuiMenuItem-root": {
                 position: "relative",
                 backgroundColor: "transparent",
+                padding: "8px 15px",
+                margin: "4px 0",
+                borderRadius: "8px",
+                transition: "all 0.3s ease",
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -86,12 +106,12 @@ export const Navbar = () => {
                   bottom: 0,
                   width: "0%",
                   height: "2px",
-                  backgroundColor: "white",
-                  transition: "width 0.5s ease", // Geçiş süresi
+                  background: "linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.5) 100%)",
+                  transition: "width 0.4s ease",
                 },
-              },
-              "& .MuiMenuItem-root:hover::after": {
-                width: "100%", // Genişlik hover'da animasyonlu şekilde artar
+                "&:hover::after": {
+                  width: "100%",
+                },
               },
             }}>
             <MenuItem onClick={() => handleClose("/")}>Home</MenuItem>
@@ -103,7 +123,7 @@ export const Navbar = () => {
           <div className='xs:hidden lg:flex h-full xs:pl-0 lg:pl-12'>
             <Lottie animationData={navbarAnimation} loop={true} />
           </div>
-          <div className='flex  items-center gap-x-20 lg:pr-20 h-full'>
+          <div className='flex items-center gap-x-20 lg:pr-20 h-full'>
             <Link to={"/"} className='link'>
               Home
             </Link>

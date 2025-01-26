@@ -28,19 +28,20 @@ export const Slider = () => {
       effect='coverflow'
       grabCursor={true}
       centeredSlides={true}
-      loop={true}
+      loop={skills.length > 3}
       slidesPerView={3}
       coverflowEffect={{ rotate: 0, stretch: -75, depth: 250, modifier: 3.5, slideShadows: false }}
       navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
       modules={[EffectCoverflow, Navigation]}>
-      {skills.map((skill, index) => (
-        <SwiperSlide key={index}>
-          <div className='flex flex-col justify-center items-center gap-y-5'>
-            <div className='lg:text-lg xs:text-sm font-bold'>{skill.name}</div>
-            <img className='md:h-[200px] xs:h-[150px] object-contain' src={skill.url} />
-          </div>
-        </SwiperSlide>
-      ))}
+      {skills &&
+        skills.map((skill, index) => (
+          <SwiperSlide key={index}>
+            <div className='flex flex-col justify-center items-center gap-y-5'>
+              <div className='lg:text-lg xs:text-sm font-bold'>{skill.name}</div>
+              <img className='md:h-[200px] xs:h-[150px] object-contain' src={skill.url} />
+            </div>
+          </SwiperSlide>
+        ))}
       <div className='flex justify-center items-center gap-x-5 mt-10'>
         <div className='swiper-button-prev'>
           <ArrowLeft size={20} />
